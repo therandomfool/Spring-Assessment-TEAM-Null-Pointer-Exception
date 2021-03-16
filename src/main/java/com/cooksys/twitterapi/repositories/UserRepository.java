@@ -1,4 +1,4 @@
-package com.cooksys.twitterapi.repository;
+package com.cooksys.twitterapi.repositories;
 
 import com.cooksys.twitterapi.entities.User;
 
