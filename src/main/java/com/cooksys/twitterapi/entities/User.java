@@ -14,8 +14,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import java.sql.Timestamp;
 import java.util.*;
-import jdk.jfr.Timestamp;
 
 
 @NoArgsConstructor
@@ -39,32 +39,24 @@ public class User {
     @Embedded
     private Profile profile;
 
+    //followers will control relationship (child side is mapped by)
     @ManyToMany(mappedBy = "following")
-    @JoinTable(
-        name = "follower_following"
-    )
     private List<User> followers;
 
-    @ManyToMany(mappedBy="followers")
+    @ManyToMany
     @JoinTable(
         name = "follower_following"
     )
     private List<User> following;
 
-    @OneToMany(mappedBy="liked")
-    @JoinTable(
-        name = "liked_tweets"
-    )
+    @ManyToMany(mappedBy="liked")
     private List<Tweet> likes;
 
     @OneToMany(mappedBy="creator")
     private List<Tweet> tweets;
 
-    @OneToMany(mappedBy="mentioned_user")
-    @JoinTable(
-        name = "tweet_mentions"
-    )
-    private List<Mentions> mentions;
+    @ManyToMany(mappedBy="mentioned_user")
+    private List<Tweet> mentions;
 
 
 }

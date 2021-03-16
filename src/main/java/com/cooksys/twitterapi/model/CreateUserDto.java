@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 public class CreateUserDto {
 
-    private Credential credential;
-    private Profile profile;
+    private CredentialDto credential;
+    private ProfileDto profile;
     
 }
