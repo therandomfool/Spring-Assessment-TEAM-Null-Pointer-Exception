@@ -2,6 +2,7 @@ package com.cooksys.twitterapi.repositories;
 
 import java.util.Optional;
 
+import com.cooksys.twitterapi.entities.Tweet;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
