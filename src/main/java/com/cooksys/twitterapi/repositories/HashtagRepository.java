@@ -1,16 +1,12 @@
 package com.cooksys.twitterapi.repositories;
 
-import java.util.Optional;
-
-import com.cooksys.twitterapi.entities.Tweet;
+import com.cooksys.twitterapi.entities.Hashtag;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.cooksys.twitterapi.entities.Hashtag;
-
 
 @Repository
-public interface HashtagRepository extends JpaRepository<Tweet, Long> {
+public interface HashtagRepository extends JpaRepository<Hashtag, Long> {
 
 	
 
