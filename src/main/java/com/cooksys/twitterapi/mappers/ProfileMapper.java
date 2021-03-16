@@ -1,14 +1,14 @@
 package com.cooksys.twitterapi.mappers;
 
 import com.cooksys.twitterapi.entities.Profile;
-import com.cooksys.twitterapi.model.ProfileResponseDto;
+import com.cooksys.twitterapi.model.ProfileDto;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")
 public interface ProfileMapper {
 
-    ProfileResponseDto objectToResponseDto(Profile profile);
+    ProfileDto embeddableToDto(Profile profile);
 
-    Profile requestDtoObjectDto(ProfileResponseDto profileResponseDto);
+    Profile dtoToEmbeddable(ProfileDto profileResponseDto);
 
 }

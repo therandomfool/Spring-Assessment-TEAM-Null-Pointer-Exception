@@ -37,6 +37,6 @@ public class Hashtag {
 	private Timestamp lastUsed;
 	
 	@ManyToMany(mappedBy = "hashtags")
-	private List<Tweet> tweet;
+	private List<Tweet> tweets;
 
 }

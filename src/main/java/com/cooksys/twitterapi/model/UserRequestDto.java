@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Data
 public class UserRequestDto {
 
-    private Credential credential;
+    private CredentialDto credential;
 
 
 }
