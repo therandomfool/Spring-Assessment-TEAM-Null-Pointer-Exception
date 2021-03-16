@@ -7,8 +7,12 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -24,10 +28,12 @@ public class Hashtag {
 	
 	private String label;
 
-	@Column(nullable = false)
+	@CreationTimestamp
+	@Temporal(TemporalType.TIMESTAMP)
 	private Timestamp firstUsed;
 	
-	@Column(nullable = false)
+	@UpdateTimestamp
+	@Temporal(TemporalType.TIMESTAMP)
 	private Timestamp lastUsed;
 	
 	@ManyToMany(mappedBy = "hashtags")
