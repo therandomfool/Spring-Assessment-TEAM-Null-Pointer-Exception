@@ -49,13 +49,13 @@ public class User {
     )
     private List<User> following;
 
-    @OneToMany(mappedBy="liked")
+    @ManyToMany(mappedBy="liked")
     private List<Tweet> likes;
 
     @OneToMany(mappedBy="creator")
     private List<Tweet> tweets;
 
-    @OneToMany(mappedBy="mentioned_user")
+    @ManyToMany(mappedBy="mentioned_user")
     private List<Tweet> mentions;
 
 
