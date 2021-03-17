@@ -2,15 +2,8 @@ package com.cooksys.twitterapi.entities;
 
 import java.sql.Timestamp;
 import java.util.List;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.Temporal;
+import javax.persistence.*;
+
 import org.hibernate.annotations.CreationTimestamp;
 
 import lombok.Data;
@@ -23,31 +16,42 @@ public class Tweet {
 	@Id
 	@GeneratedValue
 	private Long id;
-	
+
 	@ManyToOne
-	private User creator;
-	
-	@ManyToMany
-	private List<User> liked;
+	@JoinColumn
+	private User author;
+
+	private boolean deleted;
 	
 	@CreationTimestamp
 	private Timestamp posted;
 	
 	private String content;
 	
-	@OneToOne
+	@ManyToOne
+	@JoinColumn
 	private Tweet inReplyTo;
+
+	@OneToMany(mappedBy = "inReplyTo")
+	private List<Tweet> replies;
 	
-	@OneToOne
+	@ManyToOne
+	@JoinColumn
 	private Tweet repostOf;
-	
-	private boolean deleted;
-	
+
+	@OneToMany(mappedBy = "repostOf")
+	private List<Tweet> reposts;
+
 	@ManyToMany
-	@JoinTable(name = "tweet_hashtags")
+	@JoinTable(name = "tweets_hashtags")
 	private List<Hashtag> hashtags;
-	
+
 	@ManyToMany
-	private List<User> mentioned_user;
+	@JoinTable(name = "user_likes")
+	private List<User> likers;
+
+	@ManyToMany
+	@JoinTable(name = "mentioned_users")
+	private List<User> mentioned;
 	
 }

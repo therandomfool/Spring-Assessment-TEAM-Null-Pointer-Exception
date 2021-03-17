@@ -12,7 +12,7 @@ import java.util.*;
 @NoArgsConstructor
 @Entity
 @Data
-@Table(name="Users")
+@Table(name="users")
 public class User {
 
     @Id
@@ -20,15 +20,18 @@ public class User {
     private Long id;
 
     @CreationTimestamp
-    private Timestamp created;
+    private Timestamp joined;
 
     private boolean deleted;
 
     @Embedded
-    private Credential credential;
+    private Credential credentials;
 
     @Embedded
     private Profile profile;
+
+    @OneToMany(mappedBy = "author")
+    private List<Tweet> tweets;
 
     //followers will control relationship (child side is mapped by)
     @ManyToMany(mappedBy = "following")
@@ -40,13 +43,11 @@ public class User {
     )
     private List<User> following;
 
-    @ManyToMany(mappedBy="liked")
+    // In user
+    @ManyToMany(mappedBy = "likers")
     private List<Tweet> likes;
 
-    @OneToMany(mappedBy="creator")
-    private List<Tweet> tweets;
-
-    @ManyToMany(mappedBy="mentioned_user")
+    @ManyToMany(mappedBy = "mentioned")
     private List<Tweet> mentions;
 
 }

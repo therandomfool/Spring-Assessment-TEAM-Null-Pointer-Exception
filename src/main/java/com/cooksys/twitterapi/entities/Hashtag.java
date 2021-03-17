@@ -30,7 +30,7 @@ public class Hashtag {
 	
 	@UpdateTimestamp
 	private Timestamp lastUsed;
-	
+
 	@ManyToMany(mappedBy = "hashtags")
 	private List<Tweet> taggedTweets;
 
