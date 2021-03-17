@@ -7,12 +7,13 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
-@AllArgsConstructor
+//@AllArgsConstructor
 @Data
 public class ContextResponseDto {
-	
-	private TweetResponseDto target;
-	private List<TweetResponseDto> before;
-	private List<TweetResponseDto> after;
+
+    // TODO Uncomment once TweetDtos are implemented
+//	private TweetResponseDto target;
+//	private List<TweetResponseDto> before;
+//	private List<TweetResponseDto> after;
 
 }

@@ -8,7 +8,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class ContextRequestDto {
-	
-	private TweetRequestDto target;
+
+    // TODO Uncomment once TweetDtos are implemented
+//	private TweetRequestDto target;
 
 }
