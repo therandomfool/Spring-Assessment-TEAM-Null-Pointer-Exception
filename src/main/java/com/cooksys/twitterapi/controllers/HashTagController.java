@@ -3,12 +3,10 @@ package com.cooksys.twitterapi.controllers;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cooksys.twitterapi.services.HashtagService;
-
 import lombok.AllArgsConstructor;
 
 @RestController
-@RequestMapping("hashtag")
+@RequestMapping("tags")
 @AllArgsConstructor
 public class HashTagController {
 
