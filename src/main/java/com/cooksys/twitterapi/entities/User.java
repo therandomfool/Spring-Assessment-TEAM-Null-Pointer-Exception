@@ -3,17 +3,8 @@ package com.cooksys.twitterapi.entities;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import javax.persistence.Column;
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-
+import org.hibernate.annotations.CreationTimestamp;
+import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.*;
 
@@ -28,7 +19,7 @@ public class User {
     @GeneratedValue
     private Long id;
 
-    @GeneratedValue
+    @CreationTimestamp
     private Timestamp created;
 
     private boolean deleted;

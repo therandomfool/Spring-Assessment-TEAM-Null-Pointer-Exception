@@ -2,7 +2,6 @@ package com.cooksys.twitterapi.entities;
 
 import java.sql.Timestamp;
 import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -12,8 +11,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-
 import org.hibernate.annotations.CreationTimestamp;
 
 import lombok.Data;
@@ -34,7 +31,6 @@ public class Tweet {
 	private List<User> liked;
 	
 	@CreationTimestamp
-	@Temporal(TemporalType.TIMESTAMP)
 	private Timestamp posted;
 	
 	private String content;
@@ -52,6 +48,6 @@ public class Tweet {
 	private List<Hashtag> hashtags;
 	
 	@ManyToMany
-	private List<User> mentionedUsers;
+	private List<User> mentioned_user;
 	
 }
