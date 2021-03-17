@@ -1,6 +1,6 @@
 package com.cooksys.twitterapi.services;
 
-public interface UserService{
+public interface UserService {
 
 
 }

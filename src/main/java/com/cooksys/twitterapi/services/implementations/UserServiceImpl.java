@@ -12,5 +12,5 @@ public class UserServiceImpl implements UserService {
 
     private UserRepository userRepository;
     private UserMapper userMapper;
-    
+
 }
