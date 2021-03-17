@@ -1,21 +1,16 @@
 package com.cooksys.twitterapi.mappers;
 
-import java.util.List;
-
+import com.cooksys.twitterapi.entities.Hashtag;
+import com.cooksys.twitterapi.model.HashtagDto;
 import org.mapstruct.Mapper;
 
-import com.cooksys.twitterapi.entities.Hashtag;
-import com.cooksys.twitterapi.model.HashtagRequestDto;
-import com.cooksys.twitterapi.model.HashtagResponseDto;
+import java.util.List;
 
 @Mapper(componentModel = "spring")
 public interface HashtagMapper {
-	
-	
-	Hashtag requestDtoToEntity(HashtagRequestDto hashtagRequestDto);
 
-	HashtagResponseDto entityToResponse(Hashtag hashtag);
+    HashtagDto entityToDto(Hashtag hashtag);
 
-	List<HashtagResponseDto> entitiesToResponseDtos(List<Hashtag> hashtag);
+    List<HashtagDto> entitiesToDtos(List<Hashtag> hashtags);
 
 }
