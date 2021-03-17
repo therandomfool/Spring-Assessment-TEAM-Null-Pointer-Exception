@@ -1,21 +1,18 @@
 package com.cooksys.twitterapi.model;
 
-import java.sql.Timestamp;
-
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.sql.Timestamp;
+
 @NoArgsConstructor
-@AllArgsConstructor
 @Data
-public class HashtagResponseDto {
+public class HashtagDto {
 
-	private Long id;
+    private String label;
 
-	private String label;
+    private Timestamp firstUsed;
 
-	private Timestamp firstUsed;
+    private Timestamp lastUsed;
 
-	private Timestamp lastUsed;
 }

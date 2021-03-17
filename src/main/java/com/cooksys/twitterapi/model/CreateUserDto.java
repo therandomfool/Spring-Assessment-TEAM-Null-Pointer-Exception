@@ -1,7 +1,5 @@
 package com.cooksys.twitterapi.model;
 
-import com.cooksys.twitterapi.entities.*;
-
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -9,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 public class CreateUserDto {
 
-    private CredentialDto credential;
+    private CredentialDto credentials;
     private ProfileDto profile;
-    
+
 }

@@ -1,20 +1,19 @@
 package com.cooksys.twitterapi.model;
 
 
-import java.sql.Timestamp;
-
-
-
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.sql.Timestamp;
 
 @NoArgsConstructor
 @Data
 public class UserDto {
 
     private ProfileDto profile;
-    private Timestamp created;
-    private String username;
 
+    private Timestamp joined;
+
+    private String username;
 
 }
