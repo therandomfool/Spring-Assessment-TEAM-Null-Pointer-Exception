@@ -49,5 +49,4 @@ public class User {
     @ManyToMany(mappedBy="mentioned_user")
     private List<Tweet> mentions;
 
-
 }
