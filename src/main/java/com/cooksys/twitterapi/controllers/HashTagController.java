@@ -12,6 +12,6 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class HashTagController {
 
-	private HashtagService hashTagService;
+//	private HashtagService hashTagService;
 
 }

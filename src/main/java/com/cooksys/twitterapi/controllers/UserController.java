@@ -10,6 +10,6 @@ import com.cooksys.twitterapi.services.UserService;
 @AllArgsConstructor
 public class UserController {
 
-    private UserService userService;
+//    private UserService userService;
 
 }
